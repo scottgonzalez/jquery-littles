@@ -31,6 +31,12 @@ $.fn.radio = function() {
 	}
 
 	return this.pushStack(radios);
-}
+};
+
+$.fn.window = function() {
+	return this.pushStack($.unique($.map(this, function() {
+		return this.ownerDocument.defaultView;
+	})));
+};
 
 })(jQuery);
